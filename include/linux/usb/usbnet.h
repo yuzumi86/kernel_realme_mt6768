@@ -53,6 +53,8 @@ struct usbnet {
 	unsigned long		data[5];
 	u32			xid;
 	u32			hard_mtu;	/* count any extra framing */
+	u32			tx_speed;	/* in bps - NOT Mbps */
+	u32			rx_speed;	/* in bps - NOT Mbps */
 	size_t			rx_urb_size;	/* size for rx urbs */
 	struct mii_if_info	mii;
 
@@ -85,6 +87,7 @@ struct usbnet {
 #		define EVENT_LINK_CHANGE	11
 #		define EVENT_SET_RX_MODE	12
 #		define EVENT_NO_IP_ALIGN	13
+
 
 	ANDROID_KABI_RESERVE(1);
 	ANDROID_KABI_RESERVE(2);
